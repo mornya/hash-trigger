@@ -67,7 +67,7 @@ window.location.href = '/sample#test5678';
 ```
 
 ## Installation for development
-해당 라이브러리의 개발환경 빌드/배포 등을 위해서는 아래와 같이 전역 CLI 모듈을 설치한다.
+해당 라이브러리의 개발환경과 빌드/배포 진행 등을 위한 설정으로 아래와 같이 전역 CLI 모듈을 설치한다.
 ```bash
 $ npm install -g @mornya/vessel @lintest/cli sonarqube-scanner
 or

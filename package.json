@@ -2,6 +2,17 @@
   "name": "hash-trigger",
   "version": "0.1.0",
   "description": "The URL Hash Trigger library",
+  "keywords": [
+    "mornya",
+    "vessel",
+    "hash",
+    "location.hash",
+    "window.location.hash",
+    "typescript",
+    "ecmascript",
+    "javascript",
+    "front-end"
+  ],
   "homepage": "https://github.com/mornya/hash-trigger",
   "license": "MIT",
   "author": "mornya <mornya78@gmail.com>",
