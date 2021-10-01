@@ -1,6 +1,6 @@
 {
   "name": "hash-trigger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The URL Hash Trigger library",
   "keywords": [
     "mornya",
@@ -39,16 +39,28 @@
     "registry": "https://registry.npmjs.org",
     "access": "public"
   },
+  "files": [
+    "dist",
+    "!dist/test",
+    "!dist/**/@setup.d.ts",
+    "!dist/**/@setup.js",
+    "!dist/**/*.test.d.ts",
+    "!dist/**/*.test.js",
+    "types",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=10",
     "npm": ">=6"
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.10",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.2",
     "@types/webpack-env": "^1.16.2",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.3"
   },
   "vessel": {
     "minVersion": "5.0.0"

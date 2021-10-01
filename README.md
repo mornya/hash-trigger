@@ -34,8 +34,8 @@ HashTrigger 모듈은 다음과 같은 메소드들을 제공한다.
 HashTrigger.hashTrigger(option: HashUrlOption);
 ```
 옵션은 아래와 같다.
-```
-HashUrlOption = {
+```typescript
+type HashUrlOption = {
   test?: RegExp; // hash URL 내에서 필요한 값만 추출받을때 사용
   once? (matched: Matched): void; // hashTrigger 메소드 실행 즉시 콜백
   onLoaded? (matched: Matched): void; // window.onload 시 콜백
