@@ -1,1 +1,1 @@
-export * as HashTrigger from './HashTrigger';
+export * from './HashTrigger';

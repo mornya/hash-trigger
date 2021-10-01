@@ -32,12 +32,15 @@ export function hashTrigger (option: HashUrlOption): DestroyHashTriggerHandler {
         )
         : hashes;
     };
-    const matched = getMatch();
-    const loadHandler = () => option.onLoaded?.(matched);
-    const changeHandler = (e: Event) => option.onChanged(matched, e as HashChangeEvent);
+
+    // 핸들러에는 matched 값이 아닌 새로운 값을 보내야 함
+    const loadHandler = () => option.onLoaded?.(getMatch());
+    const changeHandler = (e: Event) => option.onChanged(getMatch(), e as HashChangeEvent);
 
     window.addEventListener('load', loadHandler, { once: true });
     window.addEventListener('hashchange', changeHandler, false);
+
+    const matched = getMatch();
 
     if (matched.length) {
       option.once?.(matched);
