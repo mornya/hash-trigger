@@ -1,20 +1,20 @@
-# Ignoring lint directories and files
+# The lint directories and files to be ignored
 
-# directories
-/coverage
-/bin
-/dist
-/build
-/node_modules
-/out
-/public
-/static
-/src/assets
+# Directories
 /.coverage
 /.git
 /.idea
 /.scannerwork
 /.vscode
+/coverage
+/bin
+/build
+/dist
+/esm
+/node_modules
+/out
+/public
+/static
 
-# configuration files
+# Configuration files
 /*.js

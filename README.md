@@ -87,6 +87,7 @@ $ npm run clean
 > 컴파일러를 통해 소스코드를 빌드 후 난독화 하여 `dist` 디렉토리에 출력한다.
 ```bash
 $ npm run build
+$ npm run build --esm # ESM 빌드 포함
 ```
 
 ### `watch`

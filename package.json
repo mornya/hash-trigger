@@ -1,6 +1,6 @@
 {
   "name": "hash-trigger",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "The URL Hash Trigger library",
   "keywords": [
     "mornya",
@@ -8,26 +8,27 @@
     "hash",
     "location.hash",
     "window.location.hash",
-    "typescript",
-    "ecmascript",
-    "javascript",
     "front-end"
   ],
   "homepage": "https://github.com/mornya/hash-trigger",
   "license": "MIT",
   "author": "mornya <mornya78@gmail.com>",
   "private": false,
-  "repository": "https://github.com/mornya/hash-trigger",
+  "repository": "https://github.com/mornya/hash-trigger.git",
   "bugs": "https://github.com/mornya/hash-trigger/issues",
   "main": "./dist/index.js",
   "types": "./dist",
   "scripts": {
-    "prepublishOnly": "vessel prepublish",
+    "setup": "husky && lintest install || exit 0",
+    "prepublishOnly": "vessel prepublish && vessel build",
     "login": "vessel login",
     "clean": "vessel clean",
     "build": "vessel build",
-    "watch": "vessel build watch",
+    "build:esm": "vessel build --esm",
+    "watch": "vessel build --watch",
+    "format": "prettier --write --ignore-path .prettierignore ./src ./types",
     "check": "vessel check",
+    "init": "lintest uninstall && lintest export",
     "lint": "lintest lint",
     "lint:fix": "lintest lint --fix",
     "test": "lintest test",
@@ -46,10 +47,15 @@
     "!dist/**/@setup.js",
     "!dist/**/*.test.d.ts",
     "!dist/**/*.test.js",
-    "types",
+    "esm",
+    "!esm/test",
+    "!esm/**/@setup.d.ts",
+    "!esm/**/@setup.js",
+    "!esm/**/*.test.d.ts",
+    "!esm/**/*.test.js",
     "CHANGELOG.md",
-    "README.md",
-    "LICENSE"
+    "LICENSE",
+    "README.md"
   ],
   "engines": {
     "node": ">=10",
@@ -57,12 +63,27 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^27.0.2",
-    "@types/node": "^16.10.2",
-    "@types/webpack-env": "^1.16.2",
-    "typescript": "^4.4.3"
+    "@lintest/core": "^1.16.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "@types/webpack-env": "^1.18.4",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "lint-staged": {
+    "*.{css,scss}": [
+      "prettier --write --ignore-path .prettierignore"
+    ],
+    "*.{ts,tsx}": [
+      "prettier --write --ignore-path .prettierignore",
+      "npm run check",
+      "npm run lint"
+    ]
   },
   "vessel": {
-    "minVersion": "5.0.0"
+    "minVersion": "5.3.0"
   }
 }
